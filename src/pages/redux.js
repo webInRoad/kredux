@@ -13,7 +13,12 @@ export default class Redux extends Component {
   }
 
   add = () => {
-    store.dispatch({ type: "ADD", payload: 1 });
+    // store.dispatch({ type: "ADD", payload: 1 });
+    store.dispatch(function (dispatch) {
+      setTimeout(() => {
+        dispatch({ type: "ADD", payload: 2 });
+      }, 1000);
+    });
   };
   minus = () => {
     store.dispatch({ type: "MINUS", payload: 1 });
@@ -24,7 +29,7 @@ export default class Redux extends Component {
         <h3>加减器</h3>
         <button onClick={this.add}>add</button>
         <span style={{ marginLeft: "10px", marginRight: "10px" }}>
-          {store.getState()}
+          {store.getState().count}
         </span>
         <button onClick={this.minus}>minus</button>
       </div>
