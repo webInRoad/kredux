@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { createStore } from "../kredux";
 
 const counterReducer = (state = 0, { type, payload = 1 }) => {
   switch (type) {

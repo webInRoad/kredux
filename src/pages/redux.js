@@ -21,7 +21,7 @@ export default class Redux extends Component {
   render() {
     return (
       <div className="border">
-        <h3>累加器</h3>
+        <h3>加减器</h3>
         <button onClick={this.add}>add</button>
         <span style={{ marginLeft: "10px", marginRight: "10px" }}>
           {store.getState()}
